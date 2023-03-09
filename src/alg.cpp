@@ -5,7 +5,7 @@ int cbinsearch(int *arr, int size, int value) {
   int left = 0;
   int right = size - 1;
   int mid = 0;
-  while (left <= right){
+  while (left <= right) {
     mid = (left + right) / 2;
     if (arr[mid] == value) {
       int save = mid - 1;
@@ -35,6 +35,7 @@ int cbinsearch(int *arr, int size, int value) {
   }
   if (count > 0) {
     return count;
+  } else {
+    return 0;
   }
-  return 0; // если ничего не найдено
 }
