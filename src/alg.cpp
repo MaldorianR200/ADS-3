@@ -5,14 +5,14 @@ int cbinsearch(int *arr, int size, int value) {
   int left = 0;
   int right = size - 1;
   int mid = 0;
-  while (left <= right) {
+  while ((left <= right)) {
     mid = (left + right) / 2;
     if (arr[mid] == value) {
-      int save = mid - 1;
+      int save = mid-1;
       while (arr[mid] == value) {
         if (arr[mid] == value) {
-          ++mid;
-          ++count;
+          mid++;
+          count++;
         } else {
           break;
         }
@@ -20,19 +20,19 @@ int cbinsearch(int *arr, int size, int value) {
       while (arr[save] == value) {
         if (arr[save] == value) {
           --save;
-          ++count;
+          count++;
         } else {
           break;
         }
       }
       break;
     }
-    if (arr[mid] > value) {
-      right = mid = 1;
+    if (arr[mid] > value) { // Проверяем, какую часть нужно отбросить
+      right = mid - 1;
     } else {
       left = mid + 1;
     }
   }
-  return count;
-  return 0;
+    return count;
+  return 0; // если ничего не найдено
 }
